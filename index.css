@@ -1,0 +1,327 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  color: #f4efe7;
+}
+
+/* BACKGROUND */
+
+.background-slider {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+}
+
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition:
+    opacity 2s ease,
+    transform 12s ease;
+}
+
+.bg-slide.active {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* DARK OVERLAY */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.55)
+    );
+  z-index: -2;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+
+  padding: 14px 20px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  z-index: 10;
+}
+
+.navbar.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-20px);
+}
+
+.navbar a {
+  color: #f4efe7;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  transition: 0.3s ease;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* HERO */
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* GLASS BOX */
+
+.glass-box {
+  width: 100%;
+  max-width: 700px;
+
+  padding: 40px 30px;
+
+  border-radius: 28px;
+
+  background: rgba(0,0,0,0.28);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  text-align: center;
+
+  animation: fadeIn 1.5s ease;
+}
+
+.glass-box h1 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1.5;
+  font-weight: 300;
+
+  margin-bottom: 28px;
+}
+
+.glass-box h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 32px;
+
+  color: #ffffff;
+}
+
+/* BUTTONS */
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  margin-bottom: 28px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.yes-btn {
+  background: #6f8f62;
+  color: white;
+
+  padding: 15px 34px;
+
+  border-radius: 999px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.yes-btn:hover {
+  transform: scale(1.05);
+  background: #809f73;
+}
+
+.no-btn {
+  background: rgba(255,255,255,0.08);
+  color: #f4efe7;
+
+  padding: 15px 34px;
+
+  border-radius: 999px;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  position: relative;
+}
+
+/* TEXTS */
+
+.subtext {
+  font-size: 15px;
+  color: rgba(255,255,255,0.82);
+
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.subtext a {
+  color: #dcefcf;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(220,239,207,0.5);
+}
+
+.second {
+  opacity: 0.8;
+}
+
+/* GIFS */
+
+.cat-gifs {
+  margin-top: 35px;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  transition: opacity 1s ease;
+}
+
+.cat-gifs.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cat-gifs img {
+  width: 120px;
+  height: auto;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .glass-box {
+    padding: 32px 22px;
+  }
+
+  .glass-box h2 {
+    font-size: 2.2rem;
+  }
+
+  .navbar {
+    width: calc(100% - 30px);
+
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .cat-gifs img {
+    width: 90px;
+  }
+}
+
+/* DEBUG BUTTON */
+
+#debugReset {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+
+  z-index: 999;
+
+  background: rgba(0,0,0,0.45);
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  opacity: 0.35;
+
+  transition: 0.3s ease;
+}
+
+#debugReset:hover {
+  opacity: 1;
+}

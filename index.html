@@ -1,0 +1,82 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meghívás</title>
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- BACKGROUND SLIDESHOW -->
+  <div class="background-slider">
+    <div class="bg-slide active" style="background-image: url('assets/background/fooldal/plant1.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('assets/background/fooldal/plant2.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('assets/background/fooldal/callmebyyourname.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('assets/background/fooldal/heatedrivalry.jpg');"></div>
+  </div>
+
+  <!-- OVERLAY -->
+  <div class="overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar hidden" id="navbar">
+    <a href="index.html">Főoldal</a>
+    <a href="randikrol.html">A randikról..</a>
+    <a href="vasarlas.html">Vásárlás</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="hero-section">
+
+    <div class="glass-box">
+
+      <h1>
+        Tudsz már az oldalról,<br>
+        és azt is mit akarok kérdezni,<br>
+        de most itt van hivatalosan is:
+      </h1>
+
+      <h2>Szeretnél eljönni velem randizni?</h2>
+
+      <div class="button-group">
+
+        <button class="yes-btn" id="yesBtn">
+          Igen
+        </button>
+
+        <button class="no-btn" id="noBtn">
+          Nem
+        </button>
+
+      </div>
+
+      <p class="subtext">
+        Ha az igent választod, minden részletet megtalálsz majd a
+        randikról (is)
+      </p>
+
+      <p class="subtext second">
+        Ha nemet mondasz… hangosan toporzékolni fogok, mondjuk ha igent mondasz akkor is
+      </p>
+
+      <!-- GIFS -->
+      <div class="cat-gifs hidden" id="catGifs">
+        <img src="assets/gifs/car1.gif" alt="cat">
+        <img src="assets/gifs/car2.gif" alt="cat">
+      </div>
+
+    </div>
+
+  </main>
+
+    <!-- DEBUG RESET BUTTON -->
+    <button id="debugReset">
+    Reset
+    </button>
+  <script src="index.js"></script>
+
+</body>
+</html>

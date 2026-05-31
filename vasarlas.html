@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vásárlás</title>
+
+    <link rel="stylesheet" href="vasarlas.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Főoldal</a>
+        <a href="randikrol.html">A randikról..</a>
+        <a href="vasarlas.html" class="active">Vásárlás</a>
+    </nav>
+
+    <section class="hero">
+
+        <h1>
+            Egyetlen szabály van:
+            ha éhes vagy, szólsz.
+        </h1>
+
+        <p>
+            Ha éhes vagy és szeretnéd hogy rendeljek neked valamit, csak küldd el mit kívánsz
+        </p>
+
+    </section>
+
+    <section class="food-card">
+
+        <h2>Kajarendelő központ</h2>
+
+        <p>
+            Küldd el melyik étteremből rendelnél,
+            vagy csak írd le mire fáj a fogad.
+        </p>
+            
+        <textarea
+            id="foodRequest"
+            placeholder="Pl.: McDonald's, dupla sajtburger menü + nuggets">
+        </textarea>
+        
+        <select id="foodPriority">
+
+        <option value="">
+            Mikorra szeretnéd?
+        </option>
+
+        <option value="Azonnal">
+            Most azonnal!!
+        </option>
+
+        <option value="Ma">
+            Ráér ma
+        </option>
+
+        <option value="Találkozáskor">
+            Következő találkozáskor
+        </option>
+
+        <option value="Valamikor">
+            Nem sürgős
+        </option>
+
+        </select>
+
+        <button onclick="sendFoodRequest()">
+            Kérem a kaját
+        </button>
+
+        <div class="food-note">
+            fontos enni, kérlek add le rendelésed
+        </div>
+
+    </section>
+
+    <div id="popupOverlay" class="popup-overlay">
+
+        <div class="popup-box">
+
+            <h3 id="popupText"></h3>
+
+            <button onclick="closePopup()">
+                Rendben
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="vasarlas.js"></script>
+
+</body>
+
+</html>

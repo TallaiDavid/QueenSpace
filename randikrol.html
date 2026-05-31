@@ -1,0 +1,208 @@
+<!-- randikrol.html -->
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>A randikról..</title>
+
+  <link rel="stylesheet" href="randikrol.css">
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="background-layer" id="backgroundLayer"></div>
+  <div class="overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">Főoldal</a>
+    <a href="randikrol.html" class="active">A randikról..</a>
+    <a href="vasarlas.html">Vásárlás</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Lentebb pár csodás randi ötletet találhatsz</h1>
+
+      <p>
+        Nem szerettem volna csak egyetlen programot, inkább lehessen válogatni.
+        Szerintem ezek a randik tényleg illenének hozzánk.
+      </p>
+    </div>
+  </section>
+
+  <!-- Randi 1 -->
+  <section class="date-card" data-bg="assets/randi/randi1/Arriba.png">
+
+    <div class="card-top">
+      <span>Randi #01</span>
+      <h2>Első randi ötlet</h2>
+
+      <button class="reveal-btn">
+        Felfedem 🌿
+      </button>
+    </div>
+
+    <div class="card-content hidden">
+
+      <div class="date-gallery">
+
+        <div class="date-item" draggable="true">
+          <img src="assets/randik/randi1/Arriba.png">
+          <p>Arriba</p>
+        </div>
+
+        <div class="date-item" draggable="true">
+          <img src="assets/randik/randi1/Minigolf.png">
+          <p>MiniGolf</p>
+        </div>
+
+        <div class="date-item" draggable="true">
+          <img src="assets/randik/randi1/Plane.jpg">
+          <p>Spotting</p>
+        </div>
+
+      </div>
+
+      <button class="edit-btn">
+        Átszervezném
+      </button>
+      <div class="extra-options hidden">
+
+      <h3>➕ Hozzáadható helyek</h3>
+
+      <button class="add-location"
+        data-name="Twentysix"
+        data-image="assets/randik/randi2/Twentysix.png">
+        Twentysix
+      </button>
+
+      <button class="add-location"
+        data-name="Bowling"
+        data-image="assets/randik/randi2/Bowling.png">
+        Bowling
+      </button>
+
+      <button class="add-location"
+        data-name="Light Art Museum"
+        data-image="assets/randik/randi2/Muzeum.png">
+        Light Art Museum
+      </button>
+
+    </div>
+      
+
+      <textarea placeholder="
+pl:
+- ide foglalnék majd
+- naplementére időzíteném
+- ezt azért találtam ki mert mondtad hogy kipróbálnád
+"></textarea>
+
+    </div>
+  </section>
+
+  <!-- Randi 2 -->
+  <section class="date-card" data-bg="assets/randi/randi2/Twentisix.png">
+
+    <div class="card-top">
+      <span>Randi #02</span>
+      <h2>Második randi ötlet</h2>
+
+      <button class="reveal-btn">
+        Felfedem 🌿
+      </button>
+    </div>
+
+    <div class="card-content hidden">
+
+      <div class="date-gallery">
+
+      
+          <div class="date-item" draggable="true">
+          <img src="assets/randik/randi2/Kastely.png">
+          <p>Gödöllői Kastély</p>
+         </div>
+
+         <div class="date-item" draggable="true">
+          <img src="assets/randik/randi2/Twentysix.png">
+          <p>Twentysix</p>
+          </div>
+
+          <div class="date-item" draggable="true">
+          <img src="assets/randik/randi2/Starbucks.png">
+          <p>Starbucks</p>
+          </div>
+
+          <div class="date-item" draggable="true">
+          <img src="assets/randik/randi1/Plane.jpg">
+          <p>Spotting (opcionális)</p>
+        </div>
+
+      </div>
+
+      <button class="edit-btn">
+        Átszervezném
+      </button>
+      <div class="extra-options hidden">
+
+      <h3>➕ Hozzáadható helyek</h3>
+
+      <button class="add-location"
+        data-name="Arriba"
+        data-image="assets/randik/randi1/Arriba.png">
+        Arriba
+      </button>
+
+      <button class="add-location"
+        data-name="MiniGolf"
+        data-image="assets/randik/randi1/Minigolf.png">
+        MiniGolf
+      </button>
+
+      <button class="add-location"
+        data-name="Spotting"
+        data-image="assets/randik/randi1/Spotting.png">
+        Spotting
+      </button>
+
+</div>
+
+      <textarea placeholder="
+pl:
+- itt estig maradnánk
+- ezt azért néztem mert szereted az ilyen élményeket
+"></textarea>
+
+    </div>
+  </section>
+
+  <!-- LOCKED -->
+  <section class="locked-card">
+
+    <div class="locked-bg"></div>
+
+    <div class="locked-content">
+      <span>Randi #03</span>
+
+      <h2>???</h2>
+
+      <p>
+        ezt még meghagyom egy későbbi időre
+      </p>
+
+      <div class="lock-icon">
+        🔒
+      </div>
+    </div>
+
+  </section>
+
+  <script src="randikrol.js"></script>
+
+</body>
+</html>

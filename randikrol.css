@@ -1,0 +1,488 @@
+/* randikrol.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#0f1310;
+  color:#f4efe7;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.background-layer{
+  position:fixed;
+  inset:0;
+
+  background-size:cover;
+  background-position:center;
+
+  transition:
+    background-image 1.5s ease,
+    transform 12s ease;
+
+  transform:scale(1.05);
+
+  z-index:-3;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.7)
+    );
+
+  z-index:-2;
+}
+
+/* NAVBAR */
+
+.navbar{
+  position:fixed;
+
+  top:20px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  display:flex;
+  gap:16px;
+
+  padding:14px 20px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  z-index:50;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  transition:.3s ease;
+}
+
+.navbar a:hover,
+.navbar .active{
+  background:rgba(255,255,255,0.12);
+}
+
+/* HERO */
+
+.hero{
+  min-height:70vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:120px 20px 40px;
+}
+
+.hero-box{
+  max-width:700px;
+
+  text-align:center;
+
+  background:rgba(0,0,0,0.28);
+
+  backdrop-filter:blur(16px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:30px;
+
+  padding:40px 30px;
+
+  animation:fadeUp 1.2s ease;
+}
+
+.hero-box h1{
+  font-size:clamp(2rem,5vw,4rem);
+
+  margin-bottom:20px;
+
+  font-weight:500;
+}
+
+.hero-box p{
+  line-height:1.8;
+
+  color:rgba(255,255,255,0.82);
+}
+
+/* DATE CARDS */
+
+.date-card{
+  width:min(1100px,92%);
+  margin:50px auto;
+
+  border-radius:30px;
+
+  background:rgba(0,0,0,0.30);
+
+  backdrop-filter:blur(16px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  overflow:hidden;
+
+  transition:.5s ease;
+}
+
+.card-top{
+  padding:40px 30px;
+
+  text-align:center;
+}
+
+.card-top span{
+  opacity:.7;
+}
+
+.card-top h2{
+  margin:15px 0 25px;
+
+  font-size:clamp(2rem,4vw,3rem);
+}
+
+.reveal-btn,
+.edit-btn{
+  border:none;
+
+  background:#6f8f62;
+  color:white;
+
+  padding:14px 28px;
+
+  border-radius:999px;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.reveal-btn:hover,
+.edit-btn:hover{
+  transform:scale(1.05);
+  background:#81a273;
+}
+
+/* CONTENT */
+
+.card-content{
+  padding:0 30px 35px;
+
+  animation:fadeUp 1s ease;
+}
+
+.hidden{
+  display:none;
+}
+
+/* GALLERY */
+
+.date-gallery{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+  gap:25px;
+
+  margin-bottom:30px;
+}
+
+.date-item{
+  position: relative;
+
+  background:rgba(255,255,255,0.06);
+
+  border-radius:24px;
+
+  overflow:hidden;
+
+  cursor:grab;
+
+  transition:.35s ease;
+}
+
+.date-item:hover{
+  transform:
+    translateY(-6px)
+    scale(1.02);
+}
+
+.date-item img{
+  width:100%;
+  height:240px;
+
+  object-fit:cover;
+}
+
+.date-item p{
+  padding:18px;
+
+  text-align:center;
+
+  font-size:15px;
+}
+
+/* TEXTAREA */
+
+textarea{
+  width:100%;
+  min-height:170px;
+
+  margin-top:25px;
+
+  border:none;
+
+  resize:vertical;
+
+  border-radius:24px;
+
+  padding:24px;
+
+  font-family:'Inter',sans-serif;
+
+  font-size:15px;
+
+  background:rgba(255,255,255,0.07);
+
+  color:white;
+
+  outline:none;
+
+  backdrop-filter:blur(10px);
+}
+
+textarea::placeholder{
+  color:rgba(255,255,255,0.5);
+  line-height:1.7;
+}
+
+/* LOCKED */
+
+.locked-card{
+  width:min(1100px,92%);
+  height:550px;
+
+  margin:80px auto;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:30px;
+}
+
+.locked-bg{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    url('assets/randik/randi3/Plitvice.jpg');
+
+  background-size:cover;
+  background-position:center;
+
+  filter:
+    blur(12px)
+    brightness(0.45);
+
+  transform:scale(1.08);
+
+  animation:
+    slowZoom 20s infinite alternate;
+}
+
+.locked-content{
+  position:relative;
+  z-index:2;
+
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:30px;
+}
+
+.locked-content h2{
+  font-size:4rem;
+
+  margin:10px 0;
+}
+
+.locked-content p{
+  opacity:.8;
+}
+
+.lock-icon{
+  margin-top:30px;
+
+  font-size:3rem;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero-box{
+    padding:35px 22px;
+  }
+
+  .navbar{
+    width:calc(100% - 20px);
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+  }
+
+  .card-top{
+    padding:30px 20px;
+  }
+
+  .card-content{
+    padding:0 20px 25px;
+  }
+
+  .date-item img{
+    height:200px;
+  }
+
+  .locked-content h2{
+    font-size:3rem;
+  }
+
+}
+
+@keyframes slowZoom {
+
+  from{
+    transform:scale(1.08);
+  }
+
+  to{
+    transform:scale(1.15);
+  }
+
+}
+
+/* EXTRA LOCATIONS */
+
+.extra-options{
+  margin-top:20px;
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+
+  justify-content:center;
+}
+
+.extra-options.hidden{
+  display:none;
+}
+
+.extra-options h3{
+  width:100%;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.add-location{
+  border:none;
+
+  background:rgba(255,255,255,0.08);
+
+  color:white;
+
+  padding:12px 18px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.add-location:hover{
+  transform:scale(1.05);
+}
+
+.removable-tag{
+
+  position:absolute;
+
+  top:10px;
+  right:10px;
+
+  width:32px;
+  height:32px;
+
+  border-radius:50%;
+
+  background:rgba(0,0,0,0.7);
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  z-index:20;
+
+  transition:.3s ease;
+}
+
+.removable-tag:hover{
+
+  transform:scale(1.15);
+
+}
