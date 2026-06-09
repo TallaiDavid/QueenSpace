@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kérdőív</title>
+
+    <link rel="stylesheet" href="kerdoiv.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Főoldal</a>
+        <a href="randikrol.html">A randikról..</a>
+        <a href="vasarlas.html">Vásárlás</a>
+        <a href="kerdoiv.html" class="active">Kérdőív</a>
+    </nav>
+
+    <section class="hero">
+
+        <h1>Kérdőív</h1>
+
+        <p>
+            Itt az ideje egy kérdőívnek, amely 2 részből fog szólni.
+        </p>
+
+        <p>
+            Teljesítsd mindkettőt, gyűjtsd a pontokat és ki tudja...
+            kapsz egy vagy több választható ajándékot! :D
+        </p>
+
+        <p>
+            Van pár amit csak kövi hónaptól tudsz beváltani XD
+        </p>
+
+        <p>
+            Ha több ajéndék opció van csak egyet választhatsz! majd meglátod miért :D
+        </p>
+
+        <button id="startBtn" onclick="startQuiz()">
+            Kezdjük 
+        </button>
+
+    </section>
+
+    <section id="quizContainer" class="hidden">
+
+        <div class="question-card">
+
+            <h2 id="questionTitle"></h2>
+
+            <div id="questionContent"></div>
+
+            <button id="nextBtn">
+            Következő →
+            </button>
+
+        </div>
+
+    </section>
+
+    <div id="popupOverlay" class="popup-overlay">
+
+        <div class="popup-box">
+
+            <h2>
+                Köszi a válaszokat 
+            </h2>
+
+            <p>
+                Hozzájárulsz, hogy elolvashassam őket? (kapok egy emailt róluk)
+            </p>
+
+            <p class="small">
+                Lehet plusz pontokat ér 
+            </p>
+
+            <div class="popup-buttons">
+
+                <button onclick="sendAnswers(true)">
+                    Igen
+                </button>
+
+                <button onclick="sendAnswers(false)">
+                    Nem
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="resultOverlay" class="popup-overlay">
+
+        <div class="popup-box">
+
+            <h2 id="resultTitle"></h2>
+
+            <p id="resultText"></p>
+
+            <button onclick="closeResult()">
+                Rendben
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="kerdoiv.js"></script>
+
+</body>
+</html>
