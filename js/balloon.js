@@ -1,4 +1,12 @@
 const balloonCanvas = document.getElementById("balloonCanvas");
+function resizeBalloonCanvas() {
+
+    const maxWidth = Math.min(window.innerWidth - 40, 700);
+
+    balloonCanvas.style.width = maxWidth + "px";
+    balloonCanvas.style.height = maxWidth + "px";
+
+}
 const balloonCtx = balloonCanvas.getContext("2d");
 
 const balloons = [];
@@ -180,8 +188,17 @@ balloonCanvas.addEventListener("click", (e) => {
 
     const rect = balloonCanvas.getBoundingClientRect();
 
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+        const scaleX =
+        balloonCanvas.width / rect.width;
+
+        const scaleY =
+            balloonCanvas.height / rect.height;
+
+        const mouseX =
+            (e.clientX - rect.left) * scaleX;
+
+        const mouseY =
+            (e.clientY - rect.top) * scaleY;
 
     balloons.forEach(balloon => {
 
@@ -204,3 +221,10 @@ balloonCanvas.addEventListener("click", (e) => {
     });
 
 });
+
+resizeBalloonCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeBalloonCanvas
+);
