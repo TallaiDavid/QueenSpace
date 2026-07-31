@@ -157,18 +157,38 @@ const game = {
 
             ctx.stroke();
 
-            ctx.font = "30px Arial";
-            ctx.textAlign = "center";
+            ctx.fillStyle = "white";
+        ctx.font = "18px Arial";
+        ctx.textAlign = "center";
+
+        const words = slot.icon.split(" ");
+
+        if (words.length === 1) {
 
             ctx.fillText(
-
                 slot.icon,
-
                 slot.x + slot.width / 2,
-
-                canvas.height - 22
-
+                canvas.height - 20
             );
+
+        } else {
+
+            const first = words.slice(0, Math.ceil(words.length / 2)).join(" ");
+            const second = words.slice(Math.ceil(words.length / 2)).join(" ");
+
+            ctx.fillText(
+                first,
+                slot.x + slot.width / 2,
+                canvas.height - 38
+            );
+
+            ctx.fillText(
+                second,
+                slot.x + slot.width / 2,
+                canvas.height - 16
+            );
+
+        }
 
         });
 
