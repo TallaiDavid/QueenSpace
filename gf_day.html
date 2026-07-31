@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>International Girlfriend's Day ❤️</title>
+
+    <link rel="stylesheet" href="gf_day.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="background"></div>
+
+    <main>
+
+        <section class="hero">
+
+            <h1>
+                ❤️ Happy International Girlfriend's Day ❤️
+            </h1>
+
+            <p>
+
+                Készítettem neked egy kis élményt.
+                Nem csak egy ajándékot,
+                hanem néhány apróságot,
+                amivel remélem sikerül mosolyt csalni az arcodra. 😊
+
+            </p>
+
+        </section>
+
+        <!-- BORÍTÉK -->
+
+        <section class="card">
+
+            <h2>Üzenet</h2>
+
+            <img
+                id="envelope"
+                src="assets/gf_day/boritek.png">
+
+            <button id="openLetter">
+
+                Kinyitom
+
+            </button>
+
+        </section>
+
+        <!-- LEVÉL -->
+
+        <section
+            id="letterContainer"
+            class="hidden">
+
+            <div class="letter">
+
+                <h2>^_____^</h2>
+
+                <p>
+
+                    Sziaaaa!
+                    Szeretném ezt az alkalmat megünnepelni azzal, hogy megajándékozlak valamivel vagy inkább valamikkel.
+                    
+                    Egy nagyon különleges, viccess, aranyos, gyönyörű, és néha félelmetes Királynő vagy -
+                    És minden ilyen tulajdonságod egyenként még vonzóbbá tesz 😁
+                    Örülök hogy már ennyi ideje beszélünk és mennyi mindent csináltunk együtt!
+
+                    
+                    Ugyan lehet van más módja is az ajándékozásnak, de remélem így is mosolyt tudok csalni az arcodra 😁
+                    Van lent 3 különböző játék, mindegyiknél egyedi, kisebb vagy akár nagyobb ajándékot tudsz szerezni 🤩
+                    Egyik játék sem tökéletes, főként design ügyileg xd 
+                    Remélem tetszeni fog!! (Őszintén, félek xd)
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- PLINKO -->
+
+        <section class="card">
+
+    <h2>🎲 Lucky Drop</h2>
+
+    <p>
+        Nyomd meg az indítás gombot,
+        és nézd meg melyik ajándékot nyered!
+        Minnél inkább a szélére esik a labda, annál nagyobb az esélye egy "nagyobb" ajándéknak!
+    </p>
+
+    <canvas
+    id="plinkoCanvas"
+    width="700"
+    height="700">
+    </canvas>
+
+    <button id="dropBall">
+
+        Indítás
+
+    </button>
+
+</section>
+        <!-- HOCKEY -->
+
+        <section class="card">
+
+            <h2>🏒 Hoki Challenge</h2>
+            <p> 
+                Mi lenne, ha kapnál egy ajándékot, amit nagyon szeretnél, és csak annyit kéne tenned ahhoz hogy megkapd, hogy játszol pár helyes sráccal? 
+                Ja és vannak lányok is xdd
+            </p>
+
+            <div id="universeSelect">
+
+                <button class="universeBtn" data-universe="heated">
+                    Heated Rivalry
+                </button>
+
+                <button class="universeBtn" data-universe="twilight">
+                    Twilight
+                </button>
+
+                <button class="universeBtn" data-universe="vampire">
+                    Vampire Diaries
+                </button>
+
+            </div>
+
+            <div id="characterSelect"></div>
+
+            <button
+                id="startHockey"
+                style="display:none;">
+
+                Játék indítása
+
+            </button>
+
+            <div id="hockeyGame" style="display:none;">
+
+                <canvas
+                    id="hockeyCanvas"
+                    width="700"
+                    height="400">
+                </canvas>
+
+            </div>
+
+        </section>
+
+        <!-- BALLOON -->
+
+        <section class="card">
+
+            <h2>🎈 Balloon Pop</h2>
+
+            <p>
+                Pukkaszd ki a lufikat!
+                Némelyik meglepetést rejt!
+            </p>
+
+            <canvas
+                id="balloonCanvas"
+                width="700"
+                height="700">
+            </canvas>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/matter-js"></script>
+
+    <script src="js/plinko.js"></script>
+    <script src="js/balloon.js"></script>
+    <script src="js/hockey.js"></script>
+    <script src="gf_day.js"></script>
+
+</body>
+
+</html>
