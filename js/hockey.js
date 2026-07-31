@@ -1,3 +1,12 @@
+function resizeHockeyCanvas() {
+
+    const maxWidth = Math.min(window.innerWidth - 40, 700);
+
+    hockeyCanvas.style.width = maxWidth + "px";
+    hockeyCanvas.style.height = (maxWidth * 400 / 700) + "px";
+
+}
+
 const hockeyGame =
     document.getElementById("hockeyGame");
 
@@ -151,7 +160,7 @@ document
 });
 
 startBtn.onclick = () => {
-
+    resizeHockeyCanvas();
     hockeyGame.style.display = "block";
 
     drawRink();
@@ -357,13 +366,31 @@ hockeyCanvas.addEventListener("mousemove", (e) => {
 
     const rect = hockeyCanvas.getBoundingClientRect();
 
-    playerY = e.clientY - rect.top;
+    const scaleY = hockeyCanvas.height / rect.height;
+
+    playerY = (e.clientY - rect.top) * scaleY;
 
     playerY = Math.max(35, Math.min(365, playerY));
 
     drawRink();
 
 });
+
+hockeyCanvas.addEventListener("touchmove", (e) => {
+
+    e.preventDefault();
+
+    const rect = hockeyCanvas.getBoundingClientRect();
+
+    const touch = e.touches[0];
+
+    const scaleY = hockeyCanvas.height / rect.height;
+
+    playerY = (touch.clientY - rect.top) * scaleY;
+
+    playerY = Math.max(35, Math.min(365, playerY));
+
+}, { passive: false });
 
 function animateHockey() {
 
@@ -446,7 +473,7 @@ function animateHockey() {
     }
 
     drawRink();
-
+    
     requestAnimationFrame(animateHockey);
 
 }
@@ -520,3 +547,5 @@ hockeyCanvas.addEventListener("click", (e) => {
     }
 
 });
+
+window.addEventListener("resize", resizeHockeyCanvas);
